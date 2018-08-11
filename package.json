@@ -1,0 +1,26 @@
+{
+  "name": "ts-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch-server": "nodemon --watch 'src/**/*' -e ts,tsx --exec ts-node ./src/server.ts",
+    "prestart": "npm run build",
+    "start": "node dist/server.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.5.2",
+    "koa-router": "^7.4.0"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.46",
+    "@types/koa-router": "^7.0.31",
+    "nodemon": "^1.18.3",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  }
+}
