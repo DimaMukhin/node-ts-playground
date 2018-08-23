@@ -15,11 +15,16 @@
   "dependencies": {
     "koa": "^2.5.2",
     "koa-redis-cache": "^3.0.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.8.3",
+    "koa2-session-redis": "0.0.2",
+    "redis": "^2.8.0"
   },
   "devDependencies": {
     "@types/koa": "^2.0.46",
     "@types/koa-router": "^7.0.31",
+    "@types/koa-session": "^5.7.4",
+    "@types/redis": "^2.8.6",
     "nodemon": "^1.18.3",
     "ts-node": "^7.0.1",
     "typescript": "^3.0.1"

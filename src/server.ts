@@ -1,6 +1,8 @@
 import * as Koa from 'koa';
 import * as Router from 'koa-router';
 import * as cache from 'koa-redis-cache';
+import * as session from 'koa-session';
+import RedisStore = require('koa2-session-redis');
 
 const app = new Koa();
 const router = new Router();
@@ -30,6 +32,15 @@ const options: cache.CacheOptions = {
 };
 
 app.use(cache(options));
+
+const CONFIG = {
+    store: new RedisStore({
+        host: '127.0.0.1',
+        port: 6379,
+        max_attempts: 0
+    })
+}
+app.use(session(CONFIG, app));
 
 router.get('/*', async (ctx) => {
     ctx.body = 'Hello World!';
